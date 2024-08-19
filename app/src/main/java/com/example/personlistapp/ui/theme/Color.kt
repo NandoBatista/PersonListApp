@@ -1,6 +1,5 @@
 package com.example.personlistapp.ui.theme
 
-import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 
 val DarkGray = Color(0xFF202020)

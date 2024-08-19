@@ -11,7 +11,5 @@ interface PersonRepository {
 
     suspend fun insertPerson(person: Person)
 
-    suspend fun updatePerson(person: Person)
-
     suspend fun deletePerson(person: Person)
 }

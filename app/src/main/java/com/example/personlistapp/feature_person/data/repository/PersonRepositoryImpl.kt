@@ -21,10 +21,6 @@ class PersonRepositoryImpl(
         dao.insertPerson(person)
     }
 
-    override suspend fun updatePerson(person: Person) {
-        dao.updatePerson(person)
-    }
-
     override suspend fun deletePerson(person: Person) {
         dao.deletePerson(person)
     }

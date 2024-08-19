@@ -5,7 +5,6 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import androidx.room.Update
 import com.example.personlistapp.feature_person.domain.model.Person
 import kotlinx.coroutines.flow.Flow
 
@@ -20,9 +19,6 @@ interface PersonDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertPerson(person: Person)
-
-    @Update
-    suspend fun updatePerson(person: Person)
 
     @Delete
     suspend fun deletePerson(person: Person)
