@@ -16,9 +16,11 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.Sort
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.rounded.PersonAdd
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -33,32 +35,42 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
+import com.example.personlistapp.R
+import com.example.personlistapp.core.presentation.ImagePicker
+import com.example.personlistapp.feature_person.presentation.persons.components.AddEditPersonSheet
 import com.example.personlistapp.feature_person.presentation.persons.components.OrderSection
 import com.example.personlistapp.feature_person.presentation.persons.components.PersonItem
-import com.example.personlistapp.feature_person.presentation.util.Screen
 import kotlinx.coroutines.launch
 
 @Composable
-fun PersonsScreen(
+fun PersonsListScreen(
     navController: NavController,
-    viewModel: PersonsViewModel = hiltViewModel()
+    imagePicker: ImagePicker,
+    viewModel: PersonsListViewModel = hiltViewModel()
 ) {
     val state = viewModel.state.value
     val snackbarHostState = remember { SnackbarHostState() }
     val scope = rememberCoroutineScope()
 
+    imagePicker.registerPicker { imageBytes ->
+        viewModel.onEvent(PersonsListEvent.OnPhotoPicked(imageBytes))
+    }
     Scaffold(
         floatingActionButton = {
             FloatingActionButton(
                 onClick = {
-                    navController.navigate(Screen.AddEditPersonScreen.route)
+                    viewModel.onEvent(PersonsListEvent.OnAddNewPersonClick)
                 },
-                containerColor = MaterialTheme.colorScheme.primary
+                shape = RoundedCornerShape(20.dp)
             ) {
-                Icon(imageVector = Icons.Default.Add, contentDescription = "Add person")
+                Icon(
+                    imageVector = Icons.Rounded.PersonAdd,
+                    contentDescription = "Add person"
+                )
             }
         },
         snackbarHost = { SnackbarHost(snackbarHostState) }
@@ -75,12 +87,12 @@ fun PersonsScreen(
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Text(
-                    text = "Your person",
+                    text = stringResource(R.string.person_txt_your_friend_list),
                     style = MaterialTheme.typography.headlineMedium
                 )
                 IconButton(
                     onClick = {
-                        viewModel.onEvent(PersonsEvent.ToggleOrderSection)
+                        viewModel.onEvent(PersonsListEvent.ToggleOrderSection)
                     },
                 ) {
                     Icon(
@@ -100,7 +112,7 @@ fun PersonsScreen(
                         .padding(vertical = 16.dp),
                     personOrder = state.personOrder,
                     onOrderChange = {
-                        viewModel.onEvent(PersonsEvent.Order(it))
+                        viewModel.onEvent(PersonsListEvent.Order(it))
                     }
                 )
             }
@@ -112,20 +124,17 @@ fun PersonsScreen(
                         modifier = Modifier
                             .fillMaxWidth()
                             .clickable {
-                                navController.navigate(
-                                    Screen.AddEditPersonScreen.route +
-                                            "?personId=${person.id}&personColor=${person.color}"
-                                )
+                                viewModel.onEvent(PersonsListEvent.SelectPerson(person))
                             },
                         onDeleteClick = {
-                            viewModel.onEvent(PersonsEvent.DeletePerson(person))
+                            viewModel.onEvent(PersonsListEvent.DeletePerson(person))
                             scope.launch {
                                 val result = snackbarHostState.showSnackbar(
-                                    message = "Person deleted",
+                                    message = "Person disabled",
                                     actionLabel = "Undo"
                                 )
                                 if (result == SnackbarResult.ActionPerformed) {
-                                    viewModel.onEvent(PersonsEvent.RestorePerson)
+                                    viewModel.onEvent(PersonsListEvent.RestorePerson)
                                 }
                             }
                         }
@@ -135,4 +144,16 @@ fun PersonsScreen(
             }
         }
     }
+
+    AddEditPersonSheet(
+        state = state,
+        newPerson = viewModel.newPerson,
+        isOpen = state.isAddEditPersonSheetOpen,
+        onEvent = { event ->
+            if (event is PersonsListEvent.OnAddPhotoClicked) {
+                imagePicker.pickImage()
+            }
+            viewModel.onEvent(event)
+        },
+    )
 }

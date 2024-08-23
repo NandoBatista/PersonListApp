@@ -7,14 +7,16 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.width
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.example.personlistapp.R
 import com.example.personlistapp.feature_person.domain.util.OrderType
 import com.example.personlistapp.feature_person.domain.util.PersonOrder
 
 @Composable
 fun OrderSection(
     modifier: Modifier = Modifier,
-    personOrder: PersonOrder = PersonOrder.Date(OrderType.Descending),
+    personOrder: PersonOrder = PersonOrder.Age(OrderType.Descending),
     onOrderChange: (PersonOrder) -> Unit
 ) {
     Column(
@@ -34,36 +36,19 @@ fun OrderSection(
                 selected = personOrder is PersonOrder.Age,
                 onSelect = { onOrderChange(PersonOrder.Age(personOrder.orderType)) }
             )
-            Spacer(modifier = Modifier.width(8.dp))
-            DefaultRadioButton(
-                text = "Date",
-                selected = personOrder is PersonOrder.Date,
-                onSelect = { onOrderChange(PersonOrder.Date(personOrder.orderType)) }
-            )
         }
         Spacer(modifier = Modifier.width(16.dp))
         Row(
             modifier = Modifier.fillMaxWidth()
         ) {
             DefaultRadioButton(
-                text = "Color",
-                selected = personOrder is PersonOrder.Color,
-                onSelect = { onOrderChange(PersonOrder.Color(personOrder.orderType)) }
-            )
-        }
-
-        Spacer(modifier = Modifier.width(16.dp))
-        Row(
-            modifier = Modifier.fillMaxWidth()
-        ) {
-            DefaultRadioButton(
-                text = "Ascending",
+                text = stringResource(R.string.person_txt_ascending),
                 selected = personOrder.orderType is OrderType.Ascending,
                 onSelect = { onOrderChange(personOrder.copy(OrderType.Ascending)) }
             )
             Spacer(modifier = Modifier.width(8.dp))
             DefaultRadioButton(
-                text = "Descending",
+                text = stringResource(R.string.person_txt_descending),
                 selected = personOrder.orderType is OrderType.Descending,
                 onSelect = { onOrderChange(personOrder.copy(OrderType.Descending)) }
             )

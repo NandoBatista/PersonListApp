@@ -12,7 +12,7 @@ class GetPersonsUseCase(
 ) {
 
     operator fun invoke(
-        personOrder: PersonOrder = PersonOrder.Name(OrderType.Descending)
+        personOrder: PersonOrder = PersonOrder.Age(OrderType.Descending)
     ): Flow<List<Person>> {
         return repository.getPersons().map { persons ->
             when (personOrder.orderType) {
@@ -20,16 +20,12 @@ class GetPersonsUseCase(
                     when (personOrder) {
                         is PersonOrder.Name -> persons.sortedBy { it.name.lowercase() }
                         is PersonOrder.Age -> persons.sortedBy { it.age }
-                        is PersonOrder.Date -> persons.sortedBy { it.dateOfBirth }
-                        is PersonOrder.Color -> persons.sortedBy { it.color }
                     }
                 }
                 is OrderType.Descending -> {
                     when (personOrder) {
                         is PersonOrder.Name -> persons.sortedByDescending { it.name.lowercase() }
                         is PersonOrder.Age -> persons.sortedByDescending { it.age }
-                        is PersonOrder.Date -> persons.sortedByDescending { it.dateOfBirth }
-                        is PersonOrder.Color -> persons.sortedByDescending { it.color }
                     }
                 }
             }

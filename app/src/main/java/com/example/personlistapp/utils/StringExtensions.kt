@@ -10,5 +10,3 @@ fun String.isCPFValid(): Boolean {
 
     return numbers[9] == dv1 && numbers[10] == dv2
 }
-
-

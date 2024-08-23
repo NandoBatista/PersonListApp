@@ -1,5 +1,6 @@
 package com.example.personlistapp.ui.theme
 
+import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
@@ -8,30 +9,69 @@ import androidx.compose.material3.dynamicDarkColorScheme
 import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.graphics.Color
+import androidx.compose.runtime.SideEffect
+import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalView
+import androidx.core.view.WindowCompat
 
-private val DarkColorScheme = darkColorScheme(
-    primary = Color.White,
-    background = Color.Black,
-    onBackground = Color.White,
-    surface = LightBlue,
-    onSurface = DarkGray
+val DarkColorScheme = darkColorScheme(
+    primary = GreenPrimaryDark,
+    secondary = GreenSecondaryDark,
+    tertiary = GreenTertiaryDark,
+    onPrimary = OnGreenDark,
+    primaryContainer = GreenContainerDark,
+    onPrimaryContainer = OnGreenContainerDark,
+    onSecondary = OnGreenSecondaryDark,
+    secondaryContainer = GreenSecondaryContainerDark,
+    onSecondaryContainer = OnGreenSecondaryContainerDark,
+    onTertiary = OnGreenTertiaryDark,
+    onTertiaryContainer = OnGreenTertiaryContainerDark,
+    tertiaryContainer = GreenTertiaryContainerDark,
+    background = BackgroundDark,
+    onBackground = OnBackgroundDark,
+    surface = SurfaceDark,
+    onSurface = OnSurfaceDark,
+    surfaceVariant = SurfaceVariantDark,
+    onSurfaceVariant = OnSurfaceVariantDark,
+    error = ErrorDark,
+    onError = OnErrorDark,
+    errorContainer = ErrorContainerDark,
+    onErrorContainer = OnErrorContainerDark,
+    outline = OutlineDark,
 )
 
-private val LightColorScheme = lightColorScheme(
-    primary = Color.White,
-    background = Color.Black,
-    onBackground = Color.White,
-    surface = LightBlue,
-    onSurface = DarkGray
+val LightColorScheme = lightColorScheme(
+    primary = GreenPrimaryLight,
+    secondary = GreenSecondaryLight,
+    tertiary = GreenTertiaryLight,
+    onPrimary = OnGreenLight,
+    primaryContainer = GreenContainerLight,
+    onPrimaryContainer = OnGreenContainerLight,
+    onSecondary = OnGreenSecondaryLight,
+    secondaryContainer = GreenSecondaryContainerLight,
+    onSecondaryContainer = OnGreenSecondaryContainerLight,
+    onTertiary = OnGreenTertiaryLight,
+    onTertiaryContainer = OnGreenTertiaryContainerLight,
+    tertiaryContainer = GreenTertiaryContainerLight,
+    background = BackgroundLight,
+    onBackground = OnBackgroundLight,
+    surface = SurfaceLight,
+    onSurface = OnSurfaceLight,
+    surfaceVariant = SurfaceVariantLight,
+    onSurfaceVariant = OnSurfaceVariantLight,
+    error = ErrorLight,
+    onError = OnErrorLight,
+    errorContainer = ErrorContainerLight,
+    onErrorContainer = OnErrorContainerLight,
+    outline = OutlineLight,
 )
 
 @Composable
 fun PersonListAppTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     // Dynamic color is available on Android 12+
-    dynamicColor: Boolean = false,
+    dynamicColor: Boolean = true,
     content: @Composable () -> Unit
 ) {
     val colorScheme = when {
