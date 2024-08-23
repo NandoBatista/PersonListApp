@@ -5,7 +5,7 @@ Este projeto foi desenvolvido como parte de um processo seletivo na empresa Hexa
 
 - IDE: Android Studio
 - Linguagem: Kotlin
-- Kotlin DSL (build.gradle.kts) para configurar as dependências do projeto
+- Kotlin DSL (build.gradle.kts) para configuração de build
 - Jetpack Compose: Para a criação de interfaces de usuário e animações
 - MVVM: Padrão de arquitetura para separar a lógica de apresentação
 - Clean Architecture: Estrutura para manter o código modular e escalável
