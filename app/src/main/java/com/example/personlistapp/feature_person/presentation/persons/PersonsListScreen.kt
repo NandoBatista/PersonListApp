@@ -19,13 +19,13 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.Sort
-import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.rounded.PersonAdd
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.SnackbarDuration
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.SnackbarResult
@@ -38,7 +38,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.navigation.NavController
 import com.example.personlistapp.R
 import com.example.personlistapp.core.presentation.ImagePicker
 import com.example.personlistapp.feature_person.presentation.persons.components.AddEditPersonSheet
@@ -48,7 +47,6 @@ import kotlinx.coroutines.launch
 
 @Composable
 fun PersonsListScreen(
-    navController: NavController,
     imagePicker: ImagePicker,
     viewModel: PersonsListViewModel = hiltViewModel()
 ) {
@@ -61,6 +59,7 @@ fun PersonsListScreen(
     }
     Scaffold(
         floatingActionButton = {
+            if (!state.isAddEditPersonSheetOpen)
             FloatingActionButton(
                 onClick = {
                     viewModel.onEvent(PersonsListEvent.OnAddNewPersonClick)
@@ -75,6 +74,7 @@ fun PersonsListScreen(
         },
         snackbarHost = { SnackbarHost(snackbarHostState) }
     ) { paddingValues ->
+        if (!state.isAddEditPersonSheetOpen)
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -130,8 +130,9 @@ fun PersonsListScreen(
                             viewModel.onEvent(PersonsListEvent.DeletePerson(person))
                             scope.launch {
                                 val result = snackbarHostState.showSnackbar(
-                                    message = "Person disabled",
-                                    actionLabel = "Undo"
+                                    message = "Person deleted",
+                                    actionLabel = "Undo",
+                                    duration = SnackbarDuration.Short
                                 )
                                 if (result == SnackbarResult.ActionPerformed) {
                                     viewModel.onEvent(PersonsListEvent.RestorePerson)

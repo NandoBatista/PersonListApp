@@ -16,10 +16,6 @@ object PersonValidator {
             result = result.copy(ageError = "The age can't be empty.")
         }
 
-        if(person.dateOfBirth.isBlank()) {
-            result = result.copy(dateOfBirthError = "The date of birth can't be empty.")
-        }
-
         if (!person.cpf.isCPFValid()) {
             result = result.copy(cpfError = "Invalid CPF.")
         }
@@ -34,7 +30,6 @@ object PersonValidator {
     data class ValidationResult(
         val nameError: String? = null,
         val ageError: String? = null,
-        val dateOfBirthError: String? = null,
         val cpfError: String? = null,
         val cityError: String? = null
     )

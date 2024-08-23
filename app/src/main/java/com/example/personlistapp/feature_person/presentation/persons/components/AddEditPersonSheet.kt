@@ -111,17 +111,6 @@ fun AddEditPersonSheet(
                 )
                 Spacer(Modifier.height(16.dp))
                 PersonTextField(
-                    value = newPerson?.dateOfBirth ?: "",
-                    placeholder = stringResource(R.string.person_txt_date_of_birth),
-                    error = state.dateOfBirthError,
-                    onValueChanged = {
-                        onEvent(PersonsListEvent.OnDateOfBirthChanged(it))
-                    },
-                    modifier = Modifier.fillMaxWidth(),
-                    isNumeric = true
-                )
-                Spacer(Modifier.height(16.dp))
-                PersonTextField(
                     value = newPerson?.cpf ?: "",
                     placeholder = stringResource(R.string.person_txt_cpf),
                     error = state.cpfError,
@@ -147,7 +136,7 @@ fun AddEditPersonSheet(
                         onEvent(PersonsListEvent.SavePerson)
                     }
                 ) {
-                    Text(text = "Save")
+                    Text(text = stringResource(R.string.person_txt_save))
                 }
             }
             IconButton(

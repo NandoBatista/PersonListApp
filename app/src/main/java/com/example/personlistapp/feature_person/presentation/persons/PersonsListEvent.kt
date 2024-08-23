@@ -13,7 +13,6 @@ sealed interface PersonsListEvent {
     data object DismissPerson: PersonsListEvent
     data class OnNameChanged(val value: String): PersonsListEvent
     data class OnAgeChanged(val value: String): PersonsListEvent
-    data class OnDateOfBirthChanged(val value: String): PersonsListEvent
     data class OnCpfChanged(val value: String): PersonsListEvent
     data class OnCityChanged(val value: String): PersonsListEvent
     class OnPhotoPicked(val bytes: ByteArray): PersonsListEvent

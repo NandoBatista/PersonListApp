@@ -19,13 +19,13 @@ class GetPersonsUseCase(
                 is OrderType.Ascending -> {
                     when (personOrder) {
                         is PersonOrder.Name -> persons.sortedBy { it.name.lowercase() }
-                        is PersonOrder.Age -> persons.sortedBy { it.age }
+                        is PersonOrder.Age -> persons.sortedBy { it.age.toIntOrNull() ?: Int.MAX_VALUE }
                     }
                 }
                 is OrderType.Descending -> {
                     when (personOrder) {
                         is PersonOrder.Name -> persons.sortedByDescending { it.name.lowercase() }
-                        is PersonOrder.Age -> persons.sortedByDescending { it.age }
+                        is PersonOrder.Age -> persons.sortedByDescending { it.age.toIntOrNull() ?: Int.MAX_VALUE }
                     }
                 }
             }

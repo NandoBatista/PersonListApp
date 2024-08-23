@@ -1,11 +1,14 @@
 <resources>
     <string name="app_name">Person List App</string>
-    <string name="person_txt_age">Age: %1$s</string>
-    <string name="person_txt_name">Name: %1$s</string>
+    <string name="person_txt_age_with_value">Age: %1$s</string>
+    <string name="person_txt_name_with_value">Name: %1$s</string>
+    <string name="person_txt_age">Age</string>
+    <string name="person_txt_name">Name</string>
     <string name="person_txt_your_friend_list">Your friend list</string>
     <string name="person_txt_date_of_birth">Date of birth</string>
     <string name="person_txt_cpf">CPF</string>
     <string name="person_txt_city">City</string>
     <string name="person_txt_ascending">Ascending</string>
     <string name="person_txt_descending">Descending</string>
+    <string name="person_txt_save">Save</string>
 </resources>

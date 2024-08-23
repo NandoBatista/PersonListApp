@@ -47,6 +47,7 @@ class PersonsListViewModel @Inject constructor(
                 ) {
                     return
                 }
+                _state.value = _state.value.copy(personOrder = event.personOrder)
             }
 
             is PersonsListEvent.DeletePerson -> {
@@ -75,7 +76,6 @@ class PersonsListViewModel @Inject constructor(
                         isAddEditPersonSheetOpen = false,
                         nameError = null,
                         ageError = null,
-                        dateOfBirthError = null,
                         cpfError = null,
                         cityError = null
                     )
@@ -121,11 +121,6 @@ class PersonsListViewModel @Inject constructor(
                     cpf = event.value
                 )
             }
-            is PersonsListEvent.OnDateOfBirthChanged -> {
-                newPerson = newPerson?.copy(
-                    dateOfBirth = event.value
-                )
-            }
             is PersonsListEvent.OnNameChanged -> {
                 newPerson = newPerson?.copy(
                     name = event.value
@@ -143,7 +138,6 @@ class PersonsListViewModel @Inject constructor(
                     val errors = listOfNotNull(
                         result.nameError,
                         result.ageError,
-                        result.dateOfBirthError,
                         result.cpfError,
                         result.cityError
                     )
@@ -153,7 +147,6 @@ class PersonsListViewModel @Inject constructor(
                             isAddEditPersonSheetOpen = false,
                             nameError = null,
                             ageError = null,
-                            dateOfBirthError = null,
                             cpfError = null,
                             cityError = null
                         )
@@ -166,7 +159,6 @@ class PersonsListViewModel @Inject constructor(
                         _state.value = state.value.copy(
                             nameError = result.nameError,
                             ageError = result.ageError,
-                            dateOfBirthError = result.dateOfBirthError,
                             cpfError = result.cpfError,
                             cityError = result.cityError
                         )

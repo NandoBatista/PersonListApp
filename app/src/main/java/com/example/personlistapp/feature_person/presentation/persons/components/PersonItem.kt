@@ -65,17 +65,17 @@ fun PersonItem(
                         .weight(1f)
                 ) {
                     Text(
-                        text = stringResource(R.string.person_txt_name, person.name),
+                        text = stringResource(R.string.person_txt_name_with_value, person.name),
                         style = MaterialTheme.typography.bodyLarge,
-                        color = MaterialTheme.colorScheme.onPrimary,
+                        color = MaterialTheme.colorScheme.secondaryContainer,
                         maxLines = 1,
                         overflow = TextOverflow.Ellipsis
                     )
                     Spacer(modifier = Modifier.height(4.dp))
                     Text(
-                        text = stringResource(R.string.person_txt_age, person.age),
+                        text = stringResource(R.string.person_txt_age_with_value, person.age),
                         style = MaterialTheme.typography.bodyMedium,
-                        color = MaterialTheme.colorScheme.onPrimary,
+                        color = MaterialTheme.colorScheme.onSecondaryContainer,
                         maxLines = 1,
                         overflow = TextOverflow.Ellipsis
                     )
@@ -90,7 +90,7 @@ fun PersonItem(
                 Icon(
                     imageVector = Icons.Default.Delete,
                     contentDescription = "Delete person",
-                    tint = MaterialTheme.colorScheme.onPrimary
+                    tint = MaterialTheme.colorScheme.secondaryContainer
                 )
             }
         }

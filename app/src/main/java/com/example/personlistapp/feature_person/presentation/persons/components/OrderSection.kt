@@ -26,13 +26,13 @@ fun OrderSection(
             modifier = Modifier.fillMaxWidth()
         ) {
             DefaultRadioButton(
-                text = "Name",
+                text = stringResource(R.string.person_txt_name),
                 selected = personOrder is PersonOrder.Name,
                 onSelect = { onOrderChange(PersonOrder.Name(personOrder.orderType)) }
             )
             Spacer(modifier = Modifier.width(8.dp))
             DefaultRadioButton(
-                text = "Age",
+                text = stringResource(R.string.person_txt_age),
                 selected = personOrder is PersonOrder.Age,
                 onSelect = { onOrderChange(PersonOrder.Age(personOrder.orderType)) }
             )

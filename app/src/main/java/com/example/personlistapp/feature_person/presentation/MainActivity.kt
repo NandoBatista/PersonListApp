@@ -32,7 +32,6 @@ class MainActivity : ComponentActivity() {
                     ) {
                         composable(route = Screen.PersonsListScreen.route) {
                             PersonsListScreen(
-                                navController = navController,
                                 imagePicker = ImagePickerFactory().createPicker()
                             )
                         }

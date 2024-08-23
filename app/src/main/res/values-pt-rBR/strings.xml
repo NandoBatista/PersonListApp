@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Person List App</string>
-    <string name="person_txt_age">Idade: %1$s</string>
-    <string name="person_txt_name">Nome: %1$s</string>
+    <string name="person_txt_age_with_value">Idade: %1$s</string>
+    <string name="person_txt_name_with_value">Nome: %1$s</string>
+    <string name="person_txt_age">Idade</string>
+    <string name="person_txt_name">Nome</string>
     <string name="person_txt_your_friend_list">Sua lista de amigos</string>
     <string name="person_txt_date_of_birth">Data de aniversário</string>
     <string name="person_txt_cpf">CPF</string>
     <string name="person_txt_city">Cidade</string>
     <string name="person_txt_ascending">Ascendente</string>
     <string name="person_txt_descending">Descendente</string>
+    <string name="person_txt_save">Salvar</string>
 </resources>
