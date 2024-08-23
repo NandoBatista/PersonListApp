@@ -9,7 +9,7 @@
     <string name="person_txt_date_of_birth">Data de aniversário</string>
     <string name="person_txt_cpf">CPF</string>
     <string name="person_txt_city">Cidade</string>
-    <string name="person_txt_ascending">Ascendente</string>
-    <string name="person_txt_descending">Descendente</string>
+    <string name="person_txt_ascending">Crescente</string>
+    <string name="person_txt_descending">Decrescente</string>
     <string name="person_txt_save">Salvar</string>
 </resources>
