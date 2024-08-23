@@ -1,5 +1,5 @@
 ## 🎯 Objetivo do Projeto
-Este projeto foi desenvolvido como parte de um processo seletivo na empresa Hexagon. O objetivo principal foi criar um aplicativo CRUD Android utilizando Jetpack Compose e MVVM.
+Este projeto foi desenvolvido como parte de um processo seletivo na empresa Hexagon. O objetivo principal foi criar um aplicativo offline first CRUD Android utilizando Jetpack Compose e MVVM.
 
 ## 🛠 Tecnologias Utilizadas
 
