@@ -1,42 +1,58 @@
-📱 Projeto Android com Jetpack Compose
-Este projeto foi desenvolvido como parte de um processo seletivo na empresa Hexagon. O objetivo principal foi criar um aplicativo Android utilizando Jetpack Compose, MVVM, Clean Architecture e injeção de dependências com Hilt.
+## 🎯 Objetivo do Projeto
+Este projeto foi desenvolvido como parte de um processo seletivo na empresa Hexagon. O objetivo principal foi criar um aplicativo CRUD Android utilizando Jetpack Compose e MVVM.
 
-🛠 Tecnologias Utilizadas
-IDE: Android Studio
-Linguagem: Kotlin
-Gradle: Configuração do build.gradle para Jetpack Compose e outras dependências
-Jetpack Compose: Para a criação de interfaces de usuário
-MVVM: Padrão de arquitetura para separar a lógica de apresentação
-Clean Architecture: Estrutura para manter o código modular e escalável
-Hilt: Para injeção de dependências
-Room: Para persistência de dados local
-Retrofit: Para comunicação com APIs
-Kotlin Coroutines: Para gerenciamento de threads
-🚦 Hard Skills Aprendidas
-Desenvolvimento com Jetpack Compose: Criação de UI moderna e declarativa.
-Implementação do MVVM: Separação da lógica de apresentação e dados.
-Aplicação da Clean Architecture: Organização do código em camadas para melhor manutenção e escalabilidade.
-Injeção de Dependências com Hilt: Simplificação da gestão de dependências.
-Persistência de Dados com Room: Armazenamento de dados locais com facilidade.
-Comunicação com APIs usando Retrofit: Integração com serviços externos.
-Arquitetura
+## 🛠 Tecnologias Utilizadas
 
-Funcionalidades do Aplicativo
-Tela Principal:
+- IDE: Android Studio
+- Linguagem: Kotlin
+- Kotlin DSL (build.gradle.kts) para configurar as dependências do projeto
+- Jetpack Compose: Para a criação de interfaces de usuário e animações
+- MVVM: Padrão de arquitetura para separar a lógica de apresentação
+- Clean Architecture: Estrutura para manter o código modular e escalável
+- Hilt: Para injeção de dependências
+- Room: Para persistência de dados local
+- Kotlin Coroutines: Para gerenciamento de threads
 
-Exibe uma lista de itens ou usuários.
-Permite adicionar, editar e excluir itens.
-Tela de Detalhes:
+## 🚦 Hard Skills Aprendidas
 
-Exibe detalhes de um item selecionado.
-Permite editar as informações do item.
-Tela de Configurações:
+- **Desenvolvimento com Jetpack Compose: Criação de UI moderna e declarativa.**
+- **Implementação do MVVM: Separação da lógica de apresentação e dados.**
+- **Aplicação da Clean Architecture: Organização do código em camadas para melhor manutenção e escalabilidade.**
+- **Persistência de Dados com Room: Armazenamento de dados locais com facilidade.**
 
-Permite configurar preferências do usuário.
-Oferece opções para personalizar a experiência.
-Documentação da API
-Se o aplicativo consome uma API externa, inclua detalhes sobre os endpoints utilizados. Se não houver uma API externa, você pode pular esta seção.
 
-Observações
-O projeto segue as melhores práticas para desenvolvimento Android moderno.
-Código está na branch Master.
+## Arquitetura
+![image](https://github.com/user-attachments/assets/195ed6fb-d560-4a13-8300-4801bf5f1088)
+
+
+## Funcionalidades do Aplicativo
+
+
+1. **Tela Principal**: 
+   - Apresenta um filtro para ordenar a lista de pessoas por nome ou idade, tanto em ordem crescente quanto decrescente.
+   - Exibe a lista de pessoas em cards organizados com a imagem, nome e idade.
+   - Permite adicionar, editar e excluir registros de pessoas.
+  
+     ![image](https://github.com/user-attachments/assets/05e3a935-6542-463b-8867-046d717c9fc9)
+
+
+2. **Tela de Edição**:
+   - Permite ao usuário adicionar ou modificar a imagem de perfil a partir da galeria.
+   - Oferece campos para editar nome, idade, CPF e cidade.
+   - Inclui validação para garantir que todos os campos sejam preenchidos corretamente.
+   - Atualiza o registro na base de dados local após as alterações.
+  
+     ![image](https://github.com/user-attachments/assets/0df2f898-4d42-421a-a19d-2cab89e640a8)
+
+
+3. **Tela de Adicionar**:
+   - Permite ao usuário adicionar uma nova imagem de perfil a partir da galeria.
+   - Oferece campos para inserir nome, idade, CPF e cidade.
+   - Inclui validação para assegurar que todos os campos sejam preenchidos antes de salvar.
+   - Atualiza a base de dados local com o novo registro após a inclusão.
+
+     ![image](https://github.com/user-attachments/assets/1d3308bd-faa5-4bda-a9eb-2e99425dc76d)
+
+
+## Observação 
+Código está na branch Master
