@@ -42,12 +42,7 @@ class PersonsListViewModel @Inject constructor(
     fun onEvent(event: PersonsListEvent) {
         when (event) {
             is PersonsListEvent.Order -> {
-                if (state.value.personOrder::class == event.personOrder::class &&
-                    state.value.personOrder.orderType == event.personOrder.orderType
-                ) {
-                    return
-                }
-                _state.value = _state.value.copy(personOrder = event.personOrder)
+                getPersons(event.personOrder)
             }
 
             is PersonsListEvent.DeletePerson -> {

@@ -39,7 +39,6 @@ fun PersonItem(
     Card(
         modifier = modifier,
         shape = RoundedCornerShape(cornerRadius),
-        colors = CardDefaults.cardColors(Color.White),
         elevation = CardDefaults.cardElevation(10.dp)
     ) {
         Box(
@@ -67,7 +66,7 @@ fun PersonItem(
                     Text(
                         text = stringResource(R.string.person_txt_name_with_value, person.name),
                         style = MaterialTheme.typography.bodyLarge,
-                        color = MaterialTheme.colorScheme.secondaryContainer,
+                        color = MaterialTheme.colorScheme.primary,
                         maxLines = 1,
                         overflow = TextOverflow.Ellipsis
                     )
@@ -75,7 +74,7 @@ fun PersonItem(
                     Text(
                         text = stringResource(R.string.person_txt_age_with_value, person.age),
                         style = MaterialTheme.typography.bodyMedium,
-                        color = MaterialTheme.colorScheme.onSecondaryContainer,
+                        color = MaterialTheme.colorScheme.primary,
                         maxLines = 1,
                         overflow = TextOverflow.Ellipsis
                     )
@@ -90,7 +89,7 @@ fun PersonItem(
                 Icon(
                     imageVector = Icons.Default.Delete,
                     contentDescription = "Delete person",
-                    tint = MaterialTheme.colorScheme.secondaryContainer
+                    tint = MaterialTheme.colorScheme.primary
                 )
             }
         }
