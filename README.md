@@ -29,7 +29,7 @@ Este projeto foi desenvolvido como parte de um processo seletivo na empresa Hexa
 
 
 1. **Tela Principal**: 
-   - Apresenta um filtro para ordenar a lista de pessoas por nome ou idade, tanto em ordem crescente quanto decrescente.
+   - Apresenta um filtro para ordenar a lista de pessoas por nome ou idade, tanto em ordem crescente quanto decrescente. O filtro só é exibido ao clicar no ícone correspondente e é ocultado ao clicar novamente.
    - Exibe a lista de pessoas em cards organizados com a imagem, nome e idade.
    - Permite adicionar, editar e excluir registros de pessoas.
   
