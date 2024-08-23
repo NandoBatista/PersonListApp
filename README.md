@@ -32,6 +32,7 @@ Este projeto foi desenvolvido como parte de um processo seletivo na empresa Hexa
    - Apresenta um filtro para ordenar a lista de pessoas por nome ou idade, tanto em ordem crescente quanto decrescente. O filtro só é exibido ao clicar no ícone correspondente e é ocultado ao clicar novamente.
    - Exibe a lista de pessoas em cards organizados com a imagem, nome e idade.
    - Permite adicionar, editar e excluir registros de pessoas.
+   - Permite que o usuário desfaça a remoção de uma pessoa.
   
      ![image](https://github.com/user-attachments/assets/05e3a935-6542-463b-8867-046d717c9fc9)
 
