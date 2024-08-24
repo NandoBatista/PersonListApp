@@ -1,4 +1,4 @@
-package com.example.personlistapp.core.presentation
+package com.example.personlistapp.feature_person.presentation.persons.components
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.tween

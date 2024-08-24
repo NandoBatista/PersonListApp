@@ -29,7 +29,6 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import com.example.personlistapp.R
-import com.example.personlistapp.core.presentation.BottomSheetFromWish
 import com.example.personlistapp.feature_person.domain.model.Person
 import com.example.personlistapp.feature_person.presentation.persons.PersonsListEvent
 import com.example.personlistapp.feature_person.presentation.persons.PersonsListState

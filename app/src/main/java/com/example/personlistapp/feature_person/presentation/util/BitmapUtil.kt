@@ -1,4 +1,4 @@
-package com.example.personlistapp.core.presentation
+package com.example.personlistapp.feature_person.presentation.util
 
 import android.graphics.BitmapFactory
 import androidx.compose.runtime.Composable

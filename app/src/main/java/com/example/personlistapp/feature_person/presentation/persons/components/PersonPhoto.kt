@@ -16,7 +16,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.example.personlistapp.core.presentation.rememberBitmapFromBytes
+import com.example.personlistapp.feature_person.presentation.util.rememberBitmapFromBytes
 import com.example.personlistapp.feature_person.domain.model.Person
 
 @Composable

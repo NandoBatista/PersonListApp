@@ -39,7 +39,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.personlistapp.R
-import com.example.personlistapp.core.presentation.ImagePicker
+import com.example.personlistapp.feature_person.presentation.util.ImagePicker
 import com.example.personlistapp.feature_person.presentation.persons.components.AddEditPersonSheet
 import com.example.personlistapp.feature_person.presentation.persons.components.OrderSection
 import com.example.personlistapp.feature_person.presentation.persons.components.PersonItem

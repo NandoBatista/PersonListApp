@@ -1,4 +1,4 @@
-package com.example.personlistapp.core.presentation
+package com.example.personlistapp.feature_person.presentation.util
 
 import androidx.activity.ComponentActivity
 import androidx.compose.runtime.Composable

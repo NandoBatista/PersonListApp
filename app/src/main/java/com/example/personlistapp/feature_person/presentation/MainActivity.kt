@@ -9,7 +9,7 @@ import androidx.compose.material3.Surface
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.personlistapp.core.presentation.ImagePickerFactory
+import com.example.personlistapp.feature_person.presentation.util.ImagePickerFactory
 import com.example.personlistapp.feature_person.presentation.persons.PersonsListScreen
 import com.example.personlistapp.feature_person.presentation.util.Screen
 import com.example.personlistapp.ui.theme.PersonListAppTheme
