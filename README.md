@@ -34,8 +34,7 @@ Este projeto foi desenvolvido como parte de um processo seletivo na empresa Hexa
    - Permite adicionar, editar e excluir registros de pessoas.
    - Permite que o usuário desfaça a remoção de uma pessoa.
   
-     ![image](https://github.com/user-attachments/assets/bd2a55e2-9d01-4f56-b0c5-f00ea67f8c1b)
-
+     ![image](https://github.com/user-attachments/assets/7a634ae3-723d-47fa-bdff-88d992fc6995)
 
 
 2. **Tela de Edição**:
@@ -44,7 +43,7 @@ Este projeto foi desenvolvido como parte de um processo seletivo na empresa Hexa
    - Inclui validação para garantir que todos os campos sejam preenchidos corretamente.
    - Atualiza o registro na base de dados local após as alterações.
   
-     ![image](https://github.com/user-attachments/assets/0df2f898-4d42-421a-a19d-2cab89e640a8)
+     ![image](https://github.com/user-attachments/assets/ebac980a-511d-4b63-8df3-542ade4fd2b4)
 
 
 3. **Tela de Adicionar**:
